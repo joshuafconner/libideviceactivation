@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build (Auto-detect)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "if (Test-Path 'C:\\msys64\\usr\\bin\\bash.exe') { & 'C:\\msys64\\usr\\bin\\bash.exe' -lc 'cd /c/Users/joshu/OneDrive/Documents/GitHub/libideviceactivation && if [ -x ./autogen.sh ]; then ./autogen.sh; fi && ./configure && make' } elseif (Get-Command wsl -ErrorAction SilentlyContinue) { wsl bash -lc 'cd /mnt/c/Users/joshu/OneDrive/Documents/GitHub/libideviceactivation && if [ -x ./autogen.sh ]; then ./autogen.sh; fi && ./configure && make' } else { Write-Host 'Neither MSYS2 (bash) nor WSL were found. Install MSYS2 (https://www.msys2.org/) or enable WSL and try again.' ; exit 1 }"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build (MSYS2)",
+      "type": "shell",
+      "command": "C:\\msys64\\usr\\bin\\bash.exe",
+      "args": [
+        "-lc",
+        "cd /c/Users/joshu/OneDrive/Documents/GitHub/libideviceactivation && if [ -x ./autogen.sh ]; then ./autogen.sh; fi && ./configure && make"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Build (WSL)",
+      "type": "shell",
+      "command": "wsl",
+      "args": [
+        "bash",
+        "-lc",
+        "cd /mnt/c/Users/joshu/OneDrive/Documents/GitHub/libideviceactivation && if [ -x ./autogen.sh ]; then ./autogen.sh; fi && ./configure && make"
+      ],
+      "group": "build"
+    }
+  ]
+}

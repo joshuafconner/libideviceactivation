@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "cppdbg",
+      "request": "launch",
+      "name": "Debug ideviceactivation (tools/ideviceactivation.exe)",
+      "program": "${workspaceFolder}/tools/ideviceactivation.exe",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build (Auto-detect)",
+      "stopAtEntry": false,
+      "MIMode": "gdb"
+    },
+    {
+      "type": "cppdbg",
+      "request": "launch",
+      "name": "Debug ideviceactivation --help",
+      "program": "${workspaceFolder}/tools/ideviceactivation.exe",
+      "args": ["--help"],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build (Auto-detect)",
+      "stopAtEntry": false,
+      "MIMode": "gdb"
+    },
+    {
+      "type": "cppdbg",
+      "request": "launch",
+      "name": "Debug ideviceactivation state",
+      "program": "${workspaceFolder}/tools/ideviceactivation.exe",
+      "args": ["state"],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Build (Auto-detect)",
+      "stopAtEntry": false,
+      "MIMode": "gdb"
+    }
+  ]
+}
