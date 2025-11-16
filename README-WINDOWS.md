@@ -12,7 +12,7 @@ The instructions below show the recommended MSYS2 flow, a short Git Bash note, a
 
 3. Update packages and install the build toolchain and autotools:
 
-```bash
+
 # update the package DB and core packages (close the shell and re-open if the updater asks)
 pacman -Syu
 

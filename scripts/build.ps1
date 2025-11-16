@@ -36,15 +36,10 @@ Write-Host "WSL path:    " $wslPath
 
 if (Test-Path $msysBash) {
     Write-Host "Found MSYS2 bash at $msysBash — building with MSYS2..."
-    & $msysBash -lc ('cd ' + $msysPath + ' && if [ -x ./autogen.sh ]; then ./autogen.sh; fi && ./configure && make')
-    exit $LASTEXITCODE
+  $cmd = "cd $msysPath && if [ -x ./autogen.sh ]; then ./autogen.sh; fi && ./configure && make"
+  & $msysBash -lc $cmd
+  exit $LASTEXITCODE
 }
 
-if (Get-Command wsl -ErrorAction SilentlyContinue) {
-    Write-Host "WSL detected — building inside WSL..."
-    wsl bash -lc ('cd ' + $wslPath + ' && if [ -x ./autogen.sh ]; then ./autogen.sh; fi && ./configure && make')
-    exit $LASTEXITCODE
-}
-
-Write-Error "Neither MSYS2 (C:\msys64) nor WSL were found. Install MSYS2 (https://www.msys2.org/) or enable WSL and try again."
+Write-Error "MSYS2 bash not found at $msysBash. Install MSYS2 from https://www.msys2.org/ and try again."
 exit 1
