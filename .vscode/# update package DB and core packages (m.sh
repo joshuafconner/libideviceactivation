@@ -5,10 +5,115 @@ pacman -Syu
 pacman -S --needed base-devel mingw-w64-x86_64-toolchain autoconf automake libtool pkg-config
 
 
-# finally, install other dependencies
+# finally, install othe
 
-pacman -S --needed mingw-w64-x86_64-cmake mingw-w64-x86_64-ninja mingw-w64-x86_64-qt5 mingw-w64-x86_64-qt6 mingw-w64-x86_64-boost mingw-w64-x86_64-sqlite3 mingw-w64-x86_64-zlib mingw-w64-x86_64-libpng mingw-w64-x86_64-libjpeg-turbo mingw-w64-x86_64-libtiff mingw-w64-x86_64-freetype mingw-w64-x86_64-glfw mingw-w64-x86_64-gmp mingw-w64-x86_64-mpfr mingw-w64-x86_64-curl mingw-w64-x86_64-openssl
+
+
+
+
 pacman -S --needed mingw-w64-x86_64-dbus mingw-w64-x86_64-libusb mingw-w64-x86_64-libusb-compat mingw-w64-x86_64-hidapi mingw-w64-x86_64-lz4 mingw-w64-x86_64-zstd mingw-w64-x86_64-bzip2 mingw-w64-x86_64-libarchive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 pacman -S --needed mingw-w64-x86_64-gstreamer mingw-w64-x86_64-gst-plugins-base mingw-w64-x86_64-gst-plugins-good mingw-w64-x86_64-gst-plugins-bad mingw-w64-x86_64-gst-plugins-ugly mingw-w64-x86_64-gst-libav
 pacman -S --needed mingw-w64-x86_64-assimp mingw-w64-x86_64-openal mingw-w64-x86_64-libvorbis mingw-w64-x86_64-libogg mingw-w64-x86_64-theora mingw-w64-x86_64-libwebp
 pacman -S --needed mingw-w64-x86_64-python3 mingw-w64-x86_64-python-pip
